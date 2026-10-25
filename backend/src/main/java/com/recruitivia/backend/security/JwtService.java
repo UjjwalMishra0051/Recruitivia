@@ -46,6 +46,11 @@ public class JwtService {
     public Date extractExpiration(String token) {
         return parseClaims(token).getExpiration();
     }
+            // Read the role stored inside a token
+    public String extractRole(String token) {
+        return parseClaims(token).get("role", String.class);
+    
+    }
 
     // true only if the stamp is genuine and the token has not expired
     public boolean isTokenValid(String token) {

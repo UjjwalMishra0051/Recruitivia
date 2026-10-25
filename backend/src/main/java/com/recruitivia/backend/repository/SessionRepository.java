@@ -9,4 +9,5 @@ import com.recruitivia.backend.entity.Session;
 public interface SessionRepository extends JpaRepository<Session, Long> {
 
     Optional<Session> findByToken(String token);
+     boolean existsByTokenAndRevokedFalse(String token);
 }
